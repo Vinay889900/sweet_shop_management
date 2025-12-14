@@ -17,7 +17,8 @@ export const authenticateToken = (req: AuthRequest, res: Response, next: NextFun
         const verified = jwt.verify(token, (process.env.JWT_SECRET || process.env.SECRET_KEY) as string);
         req.user = verified;
         next();
-    } catch (err) {
-        res.status(403).json({ error: 'Invalid token' });
+    } catch (err: any) {
+        console.error('Token verification failed:', err.message);
+        res.status(403).json({ error: 'Invalid token: ' + err.message });
     }
 };
