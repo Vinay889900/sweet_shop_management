@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Input from '../components/Input';
 import Button from '../components/Button';
 import { useNavigate } from 'react-router-dom';
 
@@ -15,7 +14,6 @@ interface Sweet {
 
 const Dashboard: React.FC = () => {
     const [sweets, setSweets] = useState<Sweet[]>([]);
-    const [search, setSearch] = useState('');
     const [cart, setCart] = useState<{ sweet: Sweet; quantity: number }[]>([]);
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState('All');
@@ -26,15 +24,13 @@ const Dashboard: React.FC = () => {
     const categories = ['All', ...new Set(sweets.map(s => s.category))];
     const filteredSweets = selectedCategory === 'All' ? sweets : sweets.filter(s => s.category === selectedCategory);
 
-    const fetchSweets = async (query = '') => {
+    const fetchSweets = async () => {
         const token = localStorage.getItem('token');
         if (!token) return navigate('/login');
 
         try {
             setLoading(true);
-            const url = query
-                ? `http://localhost:3000/api/sweets/search?q=${query}`
-                : 'http://localhost:3000/api/sweets';
+            const url = 'http://localhost:3000/api/sweets';
             const res = await axios.get(url, {
                 headers: { Authorization: `Bearer ${token}` }
             });
@@ -89,7 +85,7 @@ const Dashboard: React.FC = () => {
             alert('Checkout Successful! Enjoy your sweets!');
             setCart([]);
             setIsCartOpen(false);
-            fetchSweets(search); // Refresh stock
+            fetchSweets(); // Refresh stock
         } catch (err: any) {
             alert('Checkout Failed: ' + (err.response?.data?.error || 'Unknown error'));
         }
