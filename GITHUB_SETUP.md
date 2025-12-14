@@ -56,3 +56,23 @@ Refresh your GitHub repository page. You should see all your code uploaded!
 ## Troubleshooting
 - **"Remote origin already exists"**: Run `git remote remove origin` and try adding it again.
 - **"Permission denied"**: Ensure you are logged in to Git (`git config --global user.name "Your Name"` and `git config --global user.email "you@example.com"`).
+
+---
+
+## AI Co-authorship Policy (Important)
+
+For every commit where you used an AI tool, you must add a co-author trailer to your commit message.
+
+**Format:**
+At the end of your commit message, add **two empty lines**, followed by:
+`Co-authored-by: AI Tool Name <AI@users.noreply.github.com>`
+
+**Example Command:**
+```bash
+git commit -m "feat: Implement user registration endpoint
+
+Used an AI assistant to generate the initial boilerplate for the controller and service, then manually added validation logic.
+
+Co-authored-by: Google Gemini <AI@users.noreply.github.com>"
+```
+*Note: The empty lines between the description and the `Co-authored-by` tag are critical for GitHub to recognize it.*

@@ -79,16 +79,23 @@ export const updateSweet = async (req: Request, res: Response) => {
 export const deleteSweet = async (req: Request, res: Response) => {
     const { id } = req.params;
     const user = (req as any).user;
+    const fs = require('fs');
+
+    fs.appendFileSync('delete_log.txt', `[${new Date().toISOString()}] Attempting delete ID: ${id} by User: ${user.email} (${user.role})\n`);
 
     if (user.role !== 'ADMIN') {
+        fs.appendFileSync('delete_log.txt', `[${new Date().toISOString()}] Access denied.\n`);
         return res.status(403).json({ error: 'Access denied' });
     }
 
     try {
         await prisma.sweet.delete({ where: { id } });
+        fs.appendFileSync('delete_log.txt', `[${new Date().toISOString()}] Delete successful.\n`);
         res.json({ message: 'Sweet deleted successfully' });
-    } catch (error) {
-        res.status(500).json({ error: 'Internal server error' });
+    } catch (error: any) {
+        fs.appendFileSync('delete_log.txt', `[${new Date().toISOString()}] Error: ${error.message}\n`);
+        // Return the actual error to the frontend for visibility
+        res.status(500).json({ error: `Delete failed: ${error.message}` });
     }
 };
 

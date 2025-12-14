@@ -13,6 +13,8 @@ function log(msg) {
     }
 }
 
+const bcrypt = require('bcryptjs');
+
 // Define specific keywords for better image relevance
 const sweetsData = [
     { name: 'Chocolate Fudge', category: 'Chocolate', price: 5.99, quantity: 50, imageUrl: 'https://loremflickr.com/300/200/chocolate,fudge?lock=254' },
@@ -65,6 +67,29 @@ async function main() {
         } catch (e) {
             log(`Error creating sweet ${s.name}: ${e.message}`);
         }
+    }
+
+    // Seed Admin User
+    const adminEmail = 'admin@example.com';
+    const adminPassword = 'password123';
+    try {
+        const existingAdmin = await prisma.user.findUnique({ where: { email: adminEmail } });
+        if (!existingAdmin) {
+            log('Creating Admin user...');
+            const hashedPassword = await bcrypt.hash(adminPassword, 10);
+            await prisma.user.create({
+                data: {
+                    email: adminEmail,
+                    password: hashedPassword,
+                    role: 'ADMIN'
+                }
+            });
+            log('Admin user created (admin@example.com / password123)');
+        } else {
+            log('Admin user already exists.');
+        }
+    } catch (e) {
+        log('Error creating admin: ' + e.message);
     }
 
     try {
