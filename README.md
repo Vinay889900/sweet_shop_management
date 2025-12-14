@@ -1,103 +1,107 @@
-# Sweet Shop Management System
+# 🍬 Sweet Shop Management System
 
-A full-stack application for managing a sweet shop inventory, including authentication, sweets management, and inventory stock control. Built with Node.js, Express, Prisma, SQLite, React, and Vite.
+A full-stack modern web application for managing a sweet shop's inventory, sales, and operations. Built with **React**, **Node.js**, **Express**, **Prisma**, and **PostgreSQL/SQLite**.
 
-## Project Overview
+🔗 **Live Demo**: [https://sweet-shop-management-j9l4.onrender.com](https://sweet-shop-management-j9l4.onrender.com)
 
-- **Backend**: RESTful API built with Express, TypeScript, and Prisma (SQLite).
-- **Frontend**: Single Page Application (SPA) built with React, Vite, and Vanilla CSS (Design Tokens).
-- **Auth**: JWT-based authentication with Role-Based Access Control (Admin/User).
-- **Design**: Premium aesthetics with dark mode and glassmorphism.
+---
 
-## Features
+## ✨ Features
 
-- **User Authentication**: Register and Login.
-- **Sweets Management**:
-    - View all sweets (Public/Protected).
-    - Search sweets by name or category.
-    - Admin only: Add, Edit, Delete sweets.
-- **Inventory**:
-    - Users can Purchase sweets (decreases stock).
-    - Admins can Restock sweets (increases stock).
+### 🛍️ User Features
+*   **Browse Catalog**: View delicious sweets with high-quality images.
+*   **Category Filtering**: Filter sweets by type (Chocolate, Gummies, Bakery, etc.).
+*   **Search**: Real-time search by name.
+*   **Shopping Cart**: Add items, adjust quantities, and checkout.
+*   **Authentication**: Secure Register and Login (JWT-based).
 
-## Setup & Running Locally
+### 👨‍💼 Admin Features
+*   **Dashboard**: Comprehensive overview of inventory.
+*   **Inventory Management**:
+    *   **Add Sweets**: Create new products with images.
+    *   **Edit Sweets**: Update prices, stock, and descriptions.
+    *   **Delete Sweets**: Remove discontinued items.
+*   **Role-Based Access**: Protected admin routes using JWT middleware.
+
+---
+
+## 🛠️ Tech Stack
+
+*   **Frontend**: React (Vite), Vanilla CSS (Glassmorphism Design), Axios.
+*   **Backend**: Node.js, Express, TypeScript.
+*   **Database**: SQLite (Local) / PostgreSQL (Optional Production), Managed via Prisma ORM.
+*   **Authentication**: JSON Web Tokens (JWT), Bcrypt for password hashing.
+*   **Deployment**: Render (Cloud Hosting).
+
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js (v18+)
-- npm
+*   Node.js (v18 or higher)
+*   npm
 
-### Backend Setup
-1. Navigate to backend directory:
-   ```bash
-   cd backend
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Initialize Database:
-   ```bash
-   npx prisma migrate dev --name init
-   ```
-4. Run Tests (TDD Verification):
-   ```bash
-   npm test
-   ```
-5. Start Server:
-   ```bash
-   npm run dev
-   ```
-   Server runs on `http://localhost:3000`.
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Vinay889900/sweet_shop_management.git
+cd sweet_shop_management
+```
 
-### Frontend Setup
-1. Navigate to frontend directory:
-   ```bash
-   cd frontend
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start Dev Server:
-   ```bash
-   npm run dev
-   ```
-   Frontend runs on `http://localhost:5173`.
+### 2. Backend Setup
+```bash
+cd backend
+npm install
+# Create database and run migrations
+npx prisma migrate dev --name init
+# Seed the database with initial products and admin user
+npm start
+```
+*   The server runs on `http://localhost:3000`.
+*   **Default Admin**: `admin@example.com` / `password123`
 
-## 🧪 How to Verify
+### 3. Frontend Setup
+```bash
+cd frontend
+npm install
+npm run dev
+```
+*   The frontend runs on `http://localhost:5173`.
 
-You can verify the project works in 3 ways:
+---
 
-### 1. Automated Tests (Recommended)
-Run the test suite to verify all backend logic (TDD):
+## ☁️ Deployment (Render)
+
+This project is configured for seamless deployment on Render.
+
+1.  **Connect GitHub**: Select your repo on Render.
+2.  **Settings**:
+    *   **Root Directory**: `backend`
+    *   **Build Command**: `cd ../frontend && npm install && npm run build && cd ../backend && tsc`
+    *   **Start Command**: `node seed.js && node dist/server.js`
+3.  **Environment Variables**:
+    *   `SECRET_KEY`: (Any random string)
+    *   `DATABASE_URL`: `file:./dev.db` (for simple setups) or a PostgreSQL URL.
+
+---
+
+## 🤖 AI Usage & Co-authorship
+
+This project was developed with the assistance of AI tools.
+
+*   **Tools**: Google Gemini, ChatGPT, Google Antigravity
+*   **Usage**: scaffolding code, generating test cases, designing CSS themes, and debugging deployment configuration.
+*   **Policy**: All AI-assisted commits include the `Co-authored-by: Google Gemini <AI@users.noreply.github.com>` trailer in the commit message.
+
+---
+
+## 🧪 Testing
+
+Run duplicate verification tests:
 ```bash
 cd backend
 npm test
 ```
 
-### 2. Manual UI Testing
-1.  Open `http://localhost:5173`.
-2.  **Register** a new account (or login as `admin@example.com` / `admin`).
-3.  View the Dashboard grid of sweets.
-4.  Click **Purchase** to buy a sweet.
+---
 
-### 3. API Testing (VS Code / Postman)
-*   **VS Code**: Open `backend/api_tests.http` and click "Send Request" (requires REST Client extension).
-*   **Postman**: Import `backend/sweet_shop_postman_collection.json`.
-
-## Screenshots
-*(Screenshots would go here after running the app)*
-
-## My AI Usage
-
-**AI Tools Used**: Google, Chatgpt,Gemini.
-
-**How I used them**:
-- **Boilerplate Generation**: Used to generate initial Express server setup, Prisma schema, and React component structures.
-- **Test Generation**: Generated Jest/Supertest test cases for TDD, ensuring high coverage before implementation.
-- **Debugging**: Assisted in resolving Prisma race conditions during testing by suggesting `--runInBand`.
-- **Styling**: Generated CSS variables and glassmorphism utility classes for the premium design requirement.
-
-**Reflection**:
-AI significantly accelerated the scaffolding phase, allowing me to focus on business logic and connection points. The "Red-Green-Refactor" cycle was streamlined by having AI generate the "Red" tests quickly. However, manual intervention was required for fixing dependency issues, test race conditions with SQLite, and fine-tuning the frontend integration.
-#
+*Developed by Vinay Kumar*
