@@ -1,0 +1,60 @@
+@baseUrl = http://localhost:3000/api
+@authToken = {{login.response.body.token}}
+@sweetId = {{createSweet.response.body.id}}
+
+### 1. Register a new User
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+    "email": "testuser_{{$randomInt}}@example.com",
+    "password": "password123"
+}
+
+### 2. Login (This saves the token for later steps)
+# @name login
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+    "email": "admin@example.com",
+    "password": "admin"
+}
+
+### 3. Get All Sweets (Protected)
+GET {{baseUrl}}/sweets
+Authorization: Bearer {{authToken}}
+
+### 4. Search Sweets
+GET {{baseUrl}}/sweets/search?q=Chocolate
+Authorization: Bearer {{authToken}}
+
+### 5. Add a Sweet (Admin Only)
+# @name createSweet
+POST {{baseUrl}}/sweets
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+    "name": "Test Sweet {{$randomInt}}",
+    "category": "Testing",
+    "price": 5.99,
+    "quantity": 10
+}
+
+### 6. Purchase a Sweet
+POST {{baseUrl}}/sweets/{{sweetId}}/purchase
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+    "quantity": 1
+}
+
+### 7. View Sweet (Verify Purchase)
+GET {{baseUrl}}/sweets
+Authorization: Bearer {{authToken}}
+
+### 8. Delete Sweet (Admin Only)
+DELETE {{baseUrl}}/sweets/{{sweetId}}
+Authorization: Bearer {{authToken}}

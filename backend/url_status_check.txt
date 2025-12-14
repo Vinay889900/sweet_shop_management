@@ -1,0 +1,17 @@
+--- CHECKING URLS ---
+Checking 15 images...
+[FAIL 404] Chocolate Fudge: https://images.unsplash.com/photo-1614088685112-0a760b7163c8?w=400
+[FAIL 404] Gummy Bears: https://images.unsplash.com/photo-1582058923517-56e342718e81?w=400
+[OK] Red Velvet Cupcake
+[OK] Sour Worms
+[FAIL 404] Dark Chocolate Truffles: https://images.unsplash.com/photo-1548943487-a2e4e43b485c?w=400
+[FAIL 404] Macarons (Box of 6): https://images.unsplash.com/photo-1569864358637-2d1d544bc703?w=400
+[OK] Rainbow Lollipop
+[FAIL 404] Peppermint Bark: https://images.unsplash.com/photo-1632599264426-c2ae9b0d1964?w=400
+[FAIL 404] Jelly Beans Mix: https://images.unsplash.com/photo-1627632608460-637dc4f5b5c9?w=400
+[FAIL 404] Salted Caramel Chews: https://images.unsplash.com/photo-1517926227090-e3251c51a080?w=400
+[OK] Red Licorice Twists
+[FAIL 404] Glazed Donut Holes: https://images.unsplash.com/photo-1533560666687-0b192080a827?w=400
+[FAIL 404] Lemon Drops: https://images.unsplash.com/photo-1582058923517-56e342718e81?w=400
+[FAIL 404] Peanut Butter Cups: https://images.unsplash.com/photo-1621257962495-2bd336829705?w=400
+[FAIL 404] Marshmallow Fluff: https://images.unsplash.com/photo-1576618148400-f54bed99fcf8?w=400

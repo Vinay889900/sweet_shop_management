@@ -1,0 +1,17 @@
+--- CHECKING IMAGES ---
+Total sweets: 15
+[Chocolate Fudge]: https://placehold.co/300x200?text=Chocolate%20Fudge
+[Gummy Bears]: https://placehold.co/300x200?text=Gummy%20Bears
+[Red Velvet Cupcake]: https://placehold.co/300x200?text=Red%20Velvet%20Cupcake
+[Sour Worms]: https://placehold.co/300x200?text=Sour%20Worms
+[Dark Chocolate Truffles]: https://placehold.co/300x200?text=Dark%20Chocolate%20Truffles
+[Macarons (Box of 6)]: https://placehold.co/300x200?text=Macarons%20(Box%20of%206)
+[Rainbow Lollipop]: https://placehold.co/300x200?text=Rainbow%20Lollipop
+[Peppermint Bark]: https://placehold.co/300x200?text=Peppermint%20Bark
+[Jelly Beans Mix]: https://placehold.co/300x200?text=Jelly%20Beans%20Mix
+[Salted Caramel Chews]: https://placehold.co/300x200?text=Salted%20Caramel%20Chews
+[Red Licorice Twists]: https://placehold.co/300x200?text=Red%20Licorice%20Twists
+[Glazed Donut Holes]: https://placehold.co/300x200?text=Glazed%20Donut%20Holes
+[Lemon Drops]: https://placehold.co/300x200?text=Lemon%20Drops
+[Peanut Butter Cups]: https://placehold.co/300x200?text=Peanut%20Butter%20Cups
+[Marshmallow Fluff]: https://placehold.co/300x200?text=Marshmallow%20Fluff

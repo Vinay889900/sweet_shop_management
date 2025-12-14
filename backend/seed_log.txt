@@ -1,0 +1,140 @@
+--- STARTING SEED ---
+Starting seed (JS)...
+Clearing existing sweets...
+Seeding 15 unique sweets...
+Error creating sweet Chocolate Fudge: 
+Invalid `prisma.sweet.create()` invocation in
+C:\Users\uppu vinaykumar\.gemini\antigravity\scratch\incubyte_assignment\backend\seed.js:47:32
+
+  44 log(`Seeding ${sweets.length} unique sweets...`);
+  45 for (const sweet of sweets) {
+  46     try {
+→ 47         await prisma.sweet.create(
+The column `imageUrl` does not exist in the current database.
+Error creating sweet Gummy Bears: 
+Invalid `prisma.sweet.create()` invocation in
+C:\Users\uppu vinaykumar\.gemini\antigravity\scratch\incubyte_assignment\backend\seed.js:47:32
+
+  44 log(`Seeding ${sweets.length} unique sweets...`);
+  45 for (const sweet of sweets) {
+  46     try {
+→ 47         await prisma.sweet.create(
+The column `imageUrl` does not exist in the current database.
+Error creating sweet Red Velvet Cupcake: 
+Invalid `prisma.sweet.create()` invocation in
+C:\Users\uppu vinaykumar\.gemini\antigravity\scratch\incubyte_assignment\backend\seed.js:47:32
+
+  44 log(`Seeding ${sweets.length} unique sweets...`);
+  45 for (const sweet of sweets) {
+  46     try {
+→ 47         await prisma.sweet.create(
+The column `imageUrl` does not exist in the current database.
+Error creating sweet Sour Worms: 
+Invalid `prisma.sweet.create()` invocation in
+C:\Users\uppu vinaykumar\.gemini\antigravity\scratch\incubyte_assignment\backend\seed.js:47:32
+
+  44 log(`Seeding ${sweets.length} unique sweets...`);
+  45 for (const sweet of sweets) {
+  46     try {
+→ 47         await prisma.sweet.create(
+The column `imageUrl` does not exist in the current database.
+Error creating sweet Dark Chocolate Truffles: 
+Invalid `prisma.sweet.create()` invocation in
+C:\Users\uppu vinaykumar\.gemini\antigravity\scratch\incubyte_assignment\backend\seed.js:47:32
+
+  44 log(`Seeding ${sweets.length} unique sweets...`);
+  45 for (const sweet of sweets) {
+  46     try {
+→ 47         await prisma.sweet.create(
+The column `imageUrl` does not exist in the current database.
+Error creating sweet Macarons (Box of 6): 
+Invalid `prisma.sweet.create()` invocation in
+C:\Users\uppu vinaykumar\.gemini\antigravity\scratch\incubyte_assignment\backend\seed.js:47:32
+
+  44 log(`Seeding ${sweets.length} unique sweets...`);
+  45 for (const sweet of sweets) {
+  46     try {
+→ 47         await prisma.sweet.create(
+The column `imageUrl` does not exist in the current database.
+Error creating sweet Rainbow Lollipop: 
+Invalid `prisma.sweet.create()` invocation in
+C:\Users\uppu vinaykumar\.gemini\antigravity\scratch\incubyte_assignment\backend\seed.js:47:32
+
+  44 log(`Seeding ${sweets.length} unique sweets...`);
+  45 for (const sweet of sweets) {
+  46     try {
+→ 47         await prisma.sweet.create(
+The column `imageUrl` does not exist in the current database.
+Error creating sweet Peppermint Bark: 
+Invalid `prisma.sweet.create()` invocation in
+C:\Users\uppu vinaykumar\.gemini\antigravity\scratch\incubyte_assignment\backend\seed.js:47:32
+
+  44 log(`Seeding ${sweets.length} unique sweets...`);
+  45 for (const sweet of sweets) {
+  46     try {
+→ 47         await prisma.sweet.create(
+The column `imageUrl` does not exist in the current database.
+Error creating sweet Jelly Beans Mix: 
+Invalid `prisma.sweet.create()` invocation in
+C:\Users\uppu vinaykumar\.gemini\antigravity\scratch\incubyte_assignment\backend\seed.js:47:32
+
+  44 log(`Seeding ${sweets.length} unique sweets...`);
+  45 for (const sweet of sweets) {
+  46     try {
+→ 47         await prisma.sweet.create(
+The column `imageUrl` does not exist in the current database.
+Error creating sweet Salted Caramel Chews: 
+Invalid `prisma.sweet.create()` invocation in
+C:\Users\uppu vinaykumar\.gemini\antigravity\scratch\incubyte_assignment\backend\seed.js:47:32
+
+  44 log(`Seeding ${sweets.length} unique sweets...`);
+  45 for (const sweet of sweets) {
+  46     try {
+→ 47         await prisma.sweet.create(
+The column `imageUrl` does not exist in the current database.
+Error creating sweet Red Licorice Twists: 
+Invalid `prisma.sweet.create()` invocation in
+C:\Users\uppu vinaykumar\.gemini\antigravity\scratch\incubyte_assignment\backend\seed.js:47:32
+
+  44 log(`Seeding ${sweets.length} unique sweets...`);
+  45 for (const sweet of sweets) {
+  46     try {
+→ 47         await prisma.sweet.create(
+The column `imageUrl` does not exist in the current database.
+Error creating sweet Glazed Donut Holes: 
+Invalid `prisma.sweet.create()` invocation in
+C:\Users\uppu vinaykumar\.gemini\antigravity\scratch\incubyte_assignment\backend\seed.js:47:32
+
+  44 log(`Seeding ${sweets.length} unique sweets...`);
+  45 for (const sweet of sweets) {
+  46     try {
+→ 47         await prisma.sweet.create(
+The column `imageUrl` does not exist in the current database.
+Error creating sweet Lemon Drops: 
+Invalid `prisma.sweet.create()` invocation in
+C:\Users\uppu vinaykumar\.gemini\antigravity\scratch\incubyte_assignment\backend\seed.js:47:32
+
+  44 log(`Seeding ${sweets.length} unique sweets...`);
+  45 for (const sweet of sweets) {
+  46     try {
+→ 47         await prisma.sweet.create(
+The column `imageUrl` does not exist in the current database.
+Error creating sweet Peanut Butter Cups: 
+Invalid `prisma.sweet.create()` invocation in
+C:\Users\uppu vinaykumar\.gemini\antigravity\scratch\incubyte_assignment\backend\seed.js:47:32
+
+  44 log(`Seeding ${sweets.length} unique sweets...`);
+  45 for (const sweet of sweets) {
+  46     try {
+→ 47         await prisma.sweet.create(
+The column `imageUrl` does not exist in the current database.
+Error creating sweet Marshmallow Fluff: 
+Invalid `prisma.sweet.create()` invocation in
+C:\Users\uppu vinaykumar\.gemini\antigravity\scratch\incubyte_assignment\backend\seed.js:47:32
+
+  44 log(`Seeding ${sweets.length} unique sweets...`);
+  45 for (const sweet of sweets) {
+  46     try {
+→ 47         await prisma.sweet.create(
+The column `imageUrl` does not exist in the current database.
+Database seeded successfully! Total sweets: 0
