@@ -66,7 +66,23 @@ To make your app accessible on the internet, you can deploy it to cloud platform
 4. Set the **Build Command** to `npm install && npm run build`.
 5. Set the **Start Command** to `npm start`.
 6. Add your Environment Variables (`SECRET_KEY`, `DATABASE_URL`).
-   * *Note: SQLite (`dev.db`) data may persist on Render if using a Disk, otherwise use a managed PostgreSQL database.*
+
+   **Recommended Values:**
+
+   - **`SECRET_KEY`**:
+     *   *Value*: `my-super-secret-key-123` (or any random text you like).
+     *   *Purpose*: Used to secure user logins.
+
+   - **`DATABASE_URL`**:
+     *   *Option A (Easiest - SQLite)*: `file:/opt/render/project/src/backend/dev.db`
+         *   *Warning*: Your data (users/sweets) will be **deleted** every time you deploy.
+         *   *Start Command Update*: You must change your Start Command to: `npx prisma migrate dev && npm start`.
+     
+     *   *Option B (Best - PostgreSQL)*:
+         1.  On Render Dashboard, click **New +** -> **PostgreSQL**.
+         2.  Name it `sweet-shop-db`, click **Create Database**.
+         3.  Copy the **"Internal Database URL"** (starts with `postgres://...`).
+         4.  Paste that URL as the value for `DATABASE_URL` in your Web Service.
 
 ### Frontend (Vercel / Netlify)
 *If you prefer to host the frontend separately:*

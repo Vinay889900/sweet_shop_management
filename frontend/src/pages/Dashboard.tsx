@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../api';
 import Button from '../components/Button';
 import { useNavigate } from 'react-router-dom';
 
@@ -30,10 +30,7 @@ const Dashboard: React.FC = () => {
 
         try {
             setLoading(true);
-            const url = 'http://localhost:3000/api/sweets';
-            const res = await axios.get(url, {
-                headers: { Authorization: `Bearer ${token}` }
-            });
+            const res = await api.get('/sweets');
             setSweets(res.data);
         } catch (err: any) {
             if (err.response && (err.response.status === 401 || err.response.status === 403)) {
@@ -76,12 +73,9 @@ const Dashboard: React.FC = () => {
     };
 
     const checkout = async () => {
-        const token = localStorage.getItem('token');
         try {
             const items = cart.map(item => ({ sweetId: item.sweet.id, quantity: item.quantity }));
-            await axios.post('http://localhost:3000/api/cart/checkout', { items }, {
-                headers: { Authorization: `Bearer ${token}` }
-            });
+            await api.post('/cart/checkout', { items });
             alert('Checkout Successful! Enjoy your sweets!');
             setCart([]);
             setIsCartOpen(false);

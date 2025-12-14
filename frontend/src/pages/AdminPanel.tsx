@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../api';
 import Input from '../components/Input';
 import Button from '../components/Button';
 import { useNavigate } from 'react-router-dom';
@@ -20,7 +20,7 @@ const AdminPanel: React.FC = () => {
 
     const fetchSweets = async () => {
         try {
-            const res = await axios.get('http://localhost:3000/api/sweets');
+            const res = await api.get('/sweets');
             setSweets(res.data);
         } catch (err) {
             console.error('Failed to fetch sweets');
@@ -29,8 +29,6 @@ const AdminPanel: React.FC = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        const token = localStorage.getItem('token');
-        const headers = { Authorization: `Bearer ${token}` };
         const data = {
             name,
             category,
@@ -41,10 +39,10 @@ const AdminPanel: React.FC = () => {
 
         try {
             if (editingId) {
-                await axios.put(`http://localhost:3000/api/sweets/${editingId}`, data, { headers });
+                await api.put(`/sweets/${editingId}`, data);
                 alert('Sweet updated!');
             } else {
-                await axios.post('http://localhost:3000/api/sweets', data, { headers });
+                await api.post('/sweets', data);
                 alert('Sweet added!');
             }
             resetForm();
@@ -66,11 +64,8 @@ const AdminPanel: React.FC = () => {
 
     const handleDelete = async (id: string) => {
         if (!window.confirm('Are you sure you want to delete this sweet?')) return;
-        const token = localStorage.getItem('token');
         try {
-            await axios.delete(`http://localhost:3000/api/sweets/${id}`, {
-                headers: { Authorization: `Bearer ${token}` }
-            });
+            await api.delete(`/sweets/${id}`);
             fetchSweets();
         } catch (err: any) {
             alert(err.response?.data?.error || 'Failed to delete');
